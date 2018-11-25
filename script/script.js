@@ -2,6 +2,12 @@ const $canvas = document.querySelector('.js-canvas')
 const context = $canvas.getContext('2d')
 const buttonHtml = document.querySelector("button")
 
+ $canvas.sounds = {}
+ $canvas.sounds.bot = new Audio('sounds/bot.mp3')
+ $canvas.sounds.player = new Audio('sounds/player.mp3')
+ $canvas.sounds.win = new Audio('sounds/win.mp3')
+ $canvas.sounds.loose = new Audio('sounds/loose.mp3')
+
 let windowWidth = $canvas.width
 let windowHeight = $canvas.height
 let position = []
@@ -63,15 +69,21 @@ const game = () => {
                 context.fillStyle = 'green'
                 context.fill()
                 player.push(position[i][2])
+                $canvas.sounds.player.currentTime = 0
+                $canvas.sounds.player.play()
                 if (player[search] == bot[search]) {
                     search ++
                     if (search == win) {
+                        $canvas.sounds.win.currentTime = 0
+                        $canvas.sounds.win.play()
                         alert('You Win')
                         window.location.reload(false)
                     }
                 }
                 else {
                     buttonHtml.innerHTML = "Restart?"
+                    $canvas.sounds.loose.currentTime = 0
+                    $canvas.sounds.loose.play()
                     alert('You Lose')
                     window.location.reload(false)
                 }
@@ -103,6 +115,8 @@ function random() {
         context.fill()
         bot.push(i)
         buttonHtml.innerHTML = "In Progress"
+        $canvas.sounds.bot.currentTime = 0
+        $canvas.sounds.bot.play()
     }
 }
 function start() {
