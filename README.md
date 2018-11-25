@@ -7,7 +7,7 @@ Ce canvas est un petit jeu où il faut avoir une bonne mémoire.
 À gauche de la page, il y a un bouton pour lancer le jeu. Ce bouton a plusieurs états
 * Lancer le Jeu --> le joueur doit cliquer pour lancer le script
 * Bot Progress --> le joueur voie un chemin qu'il devra reproduire
-* Game in process --> lle joueur doit cliquer sur les cases en fonction de la séquence précédente
+* Game in process --> le joueur doit cliquer sur les cases en fonction de la séquence précédente
 
 ## Features
 ### La génération des carrés
