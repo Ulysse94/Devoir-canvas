@@ -9,6 +9,7 @@ Ce canvas est un petit jeu où il faut avoir une bonne mémoire.
 * Bot Progress --> le joueur voie un chemin qu'il devra reproduire
 * Game in process --> lle joueur doit cliquer sur les cases en fonction de la séquence précédente
 
+## Features
 ### La génération des carrés
 
 On met les données dans une constante
