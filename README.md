@@ -88,3 +88,12 @@ Il y a quatres types de sons
 * séléction du bot (bot.mp3)
 * séléction de l'utilisateur (player.mp3)
 
+``` javascript
+$canvas.sounds = {}
+$canvas.sounds.bot = new Audio('sounds/bot.mp3')
+$canvas.sounds.player = new Audio('sounds/player.mp3')
+$canvas.sounds.win = new Audio('sounds/win.mp3')
+$canvas.sounds.loose = new Audio('sounds/loose.mp3')
+$canvas.sounds.nomdelapiste.currentTime = 0 //(bot/win/player/loose)
+$canvas.sounds.nomdelapiste.play() //(bot/win/player/loose)
+```

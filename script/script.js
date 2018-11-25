@@ -2,11 +2,11 @@ const $canvas = document.querySelector('.js-canvas')
 const context = $canvas.getContext('2d')
 const buttonHtml = document.querySelector("button")
 
- $canvas.sounds = {}
- $canvas.sounds.bot = new Audio('sounds/bot.mp3')
- $canvas.sounds.player = new Audio('sounds/player.mp3')
- $canvas.sounds.win = new Audio('sounds/win.mp3')
- $canvas.sounds.loose = new Audio('sounds/loose.mp3')
+$canvas.sounds = {}
+$canvas.sounds.bot = new Audio('sounds/bot.mp3')
+$canvas.sounds.player = new Audio('sounds/player.mp3')
+$canvas.sounds.win = new Audio('sounds/win.mp3')
+$canvas.sounds.loose = new Audio('sounds/loose.mp3')
 
 let windowWidth = $canvas.width
 let windowHeight = $canvas.height
@@ -72,15 +72,14 @@ const game = () => {
                 $canvas.sounds.player.currentTime = 0
                 $canvas.sounds.player.play()
                 if (player[search] == bot[search]) {
-                    search ++
+                    search++
                     if (search == win) {
                         $canvas.sounds.win.currentTime = 0
                         $canvas.sounds.win.play()
                         alert('You Win')
                         window.location.reload(false)
                     }
-                }
-                else {
+                } else {
                     $canvas.sounds.loose.currentTime = 0
                     $canvas.sounds.loose.play()
                     alert('You Lose')
@@ -101,13 +100,13 @@ function finish() {
     game()
     clearInterval(intervalId)
 }
+
 function random() {
     counter--
-    if(counter == -1) {
+    if (counter == -1) {
         finish()
-    }
-    else {
-        let i = Math.floor(Math.random()*16)
+    } else {
+        let i = Math.floor(Math.random() * 16)
         context.beginPath()
         context.rect(position[i][0] - 5, position[i][1] - 5, 110, 110)
         context.fillStyle = 'black'
@@ -118,6 +117,7 @@ function random() {
         $canvas.sounds.bot.play()
     }
 }
+
 function start() {
     counter = document.querySelector("select").value
     win = counter
