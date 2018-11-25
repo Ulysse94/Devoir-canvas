@@ -81,7 +81,6 @@ const game = () => {
                     }
                 }
                 else {
-                    buttonHtml.innerHTML = "Restart?"
                     $canvas.sounds.loose.currentTime = 0
                     $canvas.sounds.loose.play()
                     alert('You Lose')
@@ -98,7 +97,7 @@ buttonHtml.addEventListener('click', () => {
 })
 
 function finish() {
-    buttonHtml.innerHTML = "Let's play"
+    buttonHtml.innerHTML = "Game in process"
     game()
     clearInterval(intervalId)
 }
@@ -114,7 +113,7 @@ function random() {
         context.fillStyle = 'black'
         context.fill()
         bot.push(i)
-        buttonHtml.innerHTML = "In Progress"
+        buttonHtml.innerHTML = "Bot Progress"
         $canvas.sounds.bot.currentTime = 0
         $canvas.sounds.bot.play()
     }
